@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arvon j.d.o.o. — Elite Sports Camp Management | Split, Croatia</title>
+  <meta name="description" content="Premium sports camp management on the Dalmatian Coast. Fully managed elite training camps for Gulf and MENA professional football clubs."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #161616;
+      --gold: #b8965a;
+      --gold-light: #cca96e;
+      --white: #ffffff;
+      --silver: #999999;
+      --body: rgba(255,255,255,0.72);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Raleway', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px;
+      transition: background 0.4s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(16px);
+      padding: 18px 48px;
+      border-bottom: 1px solid rgba(184,150,90,0.12);
+    }
+    .nav-logo {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--white);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,10,0.98);
+      z-index: 150;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.82) 100%),
+        url('https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920&q=85') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px;
+      max-width: 860px;
+    }
+    .hero-place {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.2s forwards;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.38s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--body);
+      letter-spacing: 0.04em;
+      margin-bottom: 52px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.54s forwards;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.7s forwards;
+    }
+    .btn-gold {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 16px 40px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 16px 40px;
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--white); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.1s forwards;
+    }
+    .hero-scroll span {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(184,150,90,0.8), transparent);
+      animation: scrollLine 1.5s 1.5s ease-in-out infinite;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 600px;
+    }
+    .about-content {
+      padding: 100px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      max-width: 800px;
+    }
+    .section-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-tag::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .section-title em { font-style: italic; color: var(--gold); font-weight: 400; }
+    .section-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      background: var(--black);
+      padding: 110px 48px;
+    }
+    .services-head {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 72px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.05);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: var(--black);
+      padding: 52px 40px;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 40px; right: 40px;
+      height: 1px;
+      background: rgba(184,150,90,0);
+      transition: background 0.4s;
+    }
+    .service-card:hover { background: rgba(184,150,90,0.04); }
+    .service-card:hover::after { background: rgba(184,150,90,0.3); }
+    .service-num {
+      font-family: var(--serif);
+      font-size: 11px;
+      color: var(--gold);
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+    .service-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .service-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.8;
+    }
+
+    /* ── WHY SPLIT ── */
+    .why {
+      background: var(--dark2);
+      padding: 110px 48px;
+    }
+    .why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .why-img-wrap {
+      position: relative;
+    }
+    .why-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: brightness(0.85);
+    }
+    .why-img-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 24px 28px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.6;
+      max-width: 180px;
+    }
+    .why-points {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .why-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .why-point:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+    .why-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(184,150,90,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .why-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .why-point-text strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .why-point-text span {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.7;
+    }
+
+    /* ── PROCESS ── */
+    .process {
+      background: var(--dark);
+      padding: 110px 48px;
+    }
+    .process-head {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 72px;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: rgba(184,150,90,0.2);
+      z-index: 0;
+    }
+    .process-step {
+      padding: 0 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-dot {
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(184,150,90,0.4);
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .step-dot-num {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--gold);
+    }
+    .step-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .step-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.8;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--black);
+      padding: 110px 48px;
+    }
+    .contact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+    }
+    .contact-info .section-body { margin-bottom: 40px; }
+    .contact-detail-item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .contact-detail-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+    .c-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .c-value {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--white);
+    }
+    .c-note { font-size: 12px; color: var(--silver); margin-top: 2px; }
+    .halal-box {
+      margin-top: 32px;
+      padding: 20px 24px;
+      border: 1px solid rgba(184,150,90,0.25);
+      background: rgba(184,150,90,0.03);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.7;
+    }
+    .halal-box strong { color: var(--gold); font-weight: 600; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .form-input, .form-select, .form-textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.25); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+    .form-select { cursor: pointer; }
+    .form-select option { background: #1a1a1a; }
+    .form-textarea { height: 110px; resize: none; }
+    .form-submit {
+      background: var(--gold);
+      border: none;
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    .form-submit:hover { background: var(--gold-light); }
+    .form-success {
+      display: none;
+      text-align: center;
+      color: var(--gold);
+      font-size: 13px;
+      padding: 12px;
+      border: 1px solid rgba(184,150,90,0.3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark2);
+      padding: 60px 48px 36px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 32px;
+    }
+    .footer-brand-name {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .footer-tagline {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--silver);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+    .footer-col-title {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--silver);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+    }
+    .footer-essence {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(184,150,90,0.45);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollLine {
+      0%, 100% { opacity: 1; transform: scaleY(1); }
+      50% { opacity: 0.3; transform: scaleY(0.5); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      nav.scrolled { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .about-content { padding: 60px 24px; }
+      .services { padding: 80px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why { padding: 80px 24px; }
+      .why-inner { grid-template-columns: 1fr; gap: 48px; }
+      .why-img-badge { display: none; }
+      .process { padding: 80px 24px; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .process-steps::before { display: none; }
+      .contact { padding: 80px 24px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 56px; }
+      footer { padding: 48px 24px 28px; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">ARVON</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Destinations</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#why" onclick="closeMenu()">Destinations</a>
+  <a href="#process" onclick="closeMenu()">Process</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-place">Split, Croatia</p>
+    <h1 class="hero-title">Where Elite Teams<br><em>Train.</em></h1>
+    <p class="hero-sub">Premium sports camp management on the Dalmatian Coast.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-gold">Explore Our Camps</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-content reveal">
+    <div class="section-tag" style="justify-content:center">Who We Are</div>
+    <h2 class="section-title">Elite camp management,<br><em>built around you.</em></h2>
+    <p class="section-body">ARVON is a premium sports tourism company headquartered in Split, Croatia — specialising in fully managed training camps for professional football clubs and national federations worldwide.<br><br>Every camp is designed on demand. We coordinate facilities, accommodation, transport and logistics around your squad's specific requirements. One point of contact. One contract. Zero friction.</p>
+    <div class="about-stats">
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Demand-built<br>camp programmes</div>
+      </div>
+      <div>
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Adriatic &amp; Balkan<br>destinations</div>
+      </div>
+      <div>
+        <div class="stat-num">1</div>
+        <div class="stat-label">Contract covering<br>all services</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-head reveal">
+    <div class="section-tag" style="justify-content:center">What We Deliver</div>
+    <h2 class="section-title">Everything under<br><em>one contract.</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-num">01</div>
+      <div class="service-title">Training Facilities</div>
+      <p class="service-desc">Professional-grade pitches, medical rooms and covered training areas sourced and confirmed to match your squad's specific requirements.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-num">02</div>
+      <div class="service-title">Accommodation</div>
+      <p class="service-desc">4 and 5-star hotels selected and negotiated to suit your squad's needs — full board, dedicated areas and all dietary requirements confirmed before contract.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-num">03</div>
+      <div class="service-title">Ground Transport</div>
+      <p class="service-desc">Private coaches from airport to hotel to pitch for every training session. Scheduled around your coaching staff's programme.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-num">04</div>
+      <div class="service-title">Medical & Physio</div>
+      <p class="service-desc">On-site medical and physiotherapy services. English and Arabic-speaking support. Coordination with local sports medicine facilities.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-num">05</div>
+      <div class="service-title">Camp Logistics</div>
+      <p class="service-desc">Full camp schedule coordination, visa support, equipment import assistance, and 24/7 on-the-ground operations management.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-num">06</div>
+      <div class="service-title">Bespoke Programmes</div>
+      <p class="service-desc">Pre-season and mid-season camps fully tailored to your squad size, duration and sporting requirements. We build around you, not the other way around.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SPLIT -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="why-img-wrap reveal">
+      <img class="why-img" src="https://images.unsplash.com/photo-1555990793-da11153b2473?w=800&q=80" alt="Split Croatia coast"/>
+    </div>
+    <div class="reveal">
+      <div class="section-tag">Our Destinations</div>
+      <h2 class="section-title">The Adriatic &amp;<br>beyond — on your<br><em>terms.</em></h2>
+      <p class="section-body">We operate across the Adriatic and Balkans, selecting the right destination for each club's specific needs — from Croatia and Montenegro to Bosnia and beyond. Every location is chosen for climate, infrastructure and value.</p>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+          </div>
+          <div class="why-point-text">
+            <strong>Split & Dalmatia, Croatia</strong>
+            <span>Mediterranean climate, excellent connectivity and premium training infrastructure on the Adriatic coast.</span>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="why-point-text">
+            <strong>Montenegro</strong>
+            <span>Budva Riviera and Bay of Kotor — competitive rates, Adriatic quality, ideal for squads seeking lower-profile preparation.</span>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="why-point-text">
+            <strong>North Croatia & Istria</strong>
+            <span>Kvarner Gulf and Istrian peninsula — cooler pre-season temperatures, excellent facilities, premium hotels.</span>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="why-point-text">
+            <strong>Fully Customisable</strong>
+            <span>No fixed packages. Every destination, facility and itinerary is sourced and confirmed around your squad's exact requirements.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-head reveal">
+    <div class="section-tag" style="justify-content:center">How It Works</div>
+    <h2 class="section-title">From enquiry to<br><em>first session.</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-dot"><span class="step-dot-num">1</span></div>
+      <div class="step-title">Initial Enquiry</div>
+      <p class="step-desc">Submit your squad size, dates and requirements. We respond within 24 hours with destination options and preliminary pricing.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-dot"><span class="step-dot-num">2</span></div>
+      <div class="step-title">Bespoke Proposal</div>
+      <p class="step-desc">A fully itemised camp proposal covering facilities, accommodation, transport and all logistics — with a clear all-inclusive rate per player per night.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-dot"><span class="step-dot-num">3</span></div>
+      <div class="step-title">Single Contract</div>
+      <p class="step-desc">One contract covering all services. ARVON coordinates every supplier. You deal with one point of contact in English and Arabic.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-dot"><span class="step-dot-num">4</span></div>
+      <div class="step-title">Camp Delivery</div>
+      <p class="step-desc">On-the-ground operations management from arrival to departure. Daily schedule execution. 24/7 availability throughout.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-tag">Contact</div>
+      <h2 class="section-title">Start the<br><em>conversation.</em></h2>
+      <p class="section-body">Tell us your squad size, preferred dates and destination. We will respond with a fully structured camp proposal within 24 hours.</p>
+      <div class="contact-detail-item">
+        <div class="c-label">Email</div>
+        <div class="c-value"><a href="mailto:info@arvon.cc" style="color:var(--white);text-decoration:none;">info@arvon.cc</a></div>
+        <div class="c-note">Response within 24 hours</div>
+      </div>
+      <div class="contact-detail-item">
+        <div class="c-label">Location</div>
+        <div class="c-value">Split, Croatia</div>
+        <div class="c-note">Matice hrvatske 15, 21000 Split</div>
+      </div>
+      <div class="contact-detail-item">
+        <div class="c-label">Markets Served</div>
+        <div class="c-value">Middle East & Worldwide</div>
+        <div class="c-note">Primary focus on MENA — open to all professional clubs globally</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Club / Federation</label>
+            <input class="form-input" type="text" placeholder="Club name" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input class="form-input" type="text" placeholder="Full name" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Squad Size</label>
+            <select class="form-select">
+              <option value="">Select</option>
+              <option>20–30 players</option>
+              <option>31–40 players</option>
+              <option>41–50 players</option>
+              <option>50+ players</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Destination</label>
+            <select class="form-select">
+              <option value="">Select</option>
+              <option>Split / Dalmatia</option>
+              <option>Montenegro</option>
+              <option>North Croatia</option>
+              <option>Open to recommendation</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Dates & Message</label>
+          <textarea class="form-textarea" placeholder="Approximate dates, camp duration, or any specific requirements..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry</button>
+        <div class="form-success" id="formSuccess">Thank you — we will be in touch within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">ARVON</div>
+        <p class="footer-tagline">Premium sports camp management on the Adriatic Coast. Fully managed, demand-built training camps for professional football clubs and federations worldwide.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Destinations</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Destinations</div>
+        <ul class="footer-links">
+          <li><a href="#why">Split & Dalmatia</a></li>
+          <li><a href="#why">Budva & Bay of Kotor</a></li>
+          <li><a href="#why">Kvarner & Istria</a></li>
+          <li><a href="#why">Bosnia & Herzegovina</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Arvon j.d.o.o. · Matice hrvatske 15, 21000 Split, Croatia<br>All rights reserved.</p>
+      <p class="footer-copy" style="text-align:center;"><a href="mailto:info@arvon.cc" style="color:var(--gold);text-decoration:none;letter-spacing:0.05em;">info@arvon.cc</a></p>
+      <p class="footer-essence">Where elite athletes prepare to win.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const burger = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
+    burger.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Form
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('formSuccess').style.display = 'block';
+    e.target.reset();
+  }
+</script>
+</body>
+</html>
