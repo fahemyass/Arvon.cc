@@ -1,0 +1,217 @@
+<title>Arvon Group — The infrastructure of elite performance</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Arvon Group Ltd — the institutional infrastructure for elite sport, premium tourism, events, consulting, and business intelligence.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --paper:#FFFFFF;--cream:#F6F6F4;--card:#FFFFFF;
+ --ob:#0C0F12;--ob2:#12161A;--ob3:#191E23;
+ --ink:#12151A;--ink2:#464D54;--ink3:#767D84;
+ --line:rgba(18,21,26,.12);--hair:rgba(18,21,26,.08);
+ --dline:rgba(255,255,255,.12);--dhair:rgba(255,255,255,.07);
+ --gold:#997325;--gold2:#C9A24B;--gold3:#E7CE8A;--goldg:linear-gradient(135deg,#E7CE8A,#C9A24B 45%,#997325);
+ --steel:#AEB6BE;--steeld:#6E767E;
+ --f:'Poppins',-apple-system,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--f);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nMTQwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC44NScgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPjxmZUNvbG9yTWF0cml4IHR5cGU9J3NhdHVyYXRlJyB2YWx1ZXM9JzAnLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWx0ZXI9J3VybCgjbiknIG9wYWNpdHk9JzAuNScvPjwvc3ZnPg==);opacity:.035;mix-blend-mode:multiply}
+.wrap{max-width:1200px;margin:0 auto;padding:0 44px}
+.lab{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.labs{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.gline{height:2px;width:56px;background:var(--goldg);border-radius:2px}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.02em;line-height:1.04;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.mono{width:34px;height:34px;border-radius:9px;background:var(--goldg);color:#0C0F12;display:grid;place-items:center;font-weight:800;font-size:19px;letter-spacing:0;box-shadow:0 4px 14px rgba(153,115,37,.35)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;letter-spacing:.01em;padding:15px 30px;border-radius:3px;transition:.25s}
+.btn.g{background:var(--goldg);color:#14100A;box-shadow:0 10px 30px rgba(153,115,37,.28)}
+.btn.g:hover{transform:translateY(-2px)}
+.btn.o{border:1px solid rgba(255,255,255,.45);color:#fff}.btn.o:hover{background:rgba(255,255,255,.1)}
+/* nav */
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px 44px;background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--hair)}
+.nav .lgw{display:flex;align-items:center;gap:12px}
+.nav .lg{font-weight:800;letter-spacing:.16em;font-size:15px}
+.nav .lk{display:flex;gap:34px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);font-weight:500}
+.nav .lk a:hover{color:var(--gold)}
+.nav .en{border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:10px 20px;border-radius:3px;font-weight:600;transition:.25s}
+.nav .en:hover{background:var(--gold);color:#fff}
+/* hero — full-bleed cinematic */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:#0C0F12}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;filter:contrast(1.08) brightness(.92)}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,11,13,.94) 0%,rgba(9,11,13,.7) 42%,rgba(9,11,13,.34) 72%,rgba(9,11,13,.5) 100%)}
+.hero .scrim2{position:absolute;inset:0;background:radial-gradient(80% 60% at 88% 12%,rgba(201,162,75,.2),transparent 55%),linear-gradient(0deg,rgba(9,11,13,.7),transparent 40%)}
+.hero .in{position:relative;z-index:3;padding:60px 0}
+.hero .eyb{display:flex;align-items:center;gap:16px;color:rgba(255,255,255,.82);font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;font-weight:600}
+.hero h1{color:#fff;font-size:clamp(44px,7vw,92px);max-width:15ch;letter-spacing:-.035em;margin:26px 0 0;text-shadow:0 2px 40px rgba(0,0,0,.5)}
+.hero h1 .go{background:var(--goldg);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:rgba(255,255,255,.8);font-size:19px;max-width:540px;margin-top:28px;line-height:1.66}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+.hero .scroll{position:absolute;bottom:26px;left:44px;z-index:3;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+/* floating strip overlapping hero */
+.stripwrap{position:relative;z-index:5;margin-top:-52px}
+.strip{display:flex;flex-wrap:wrap;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 70px rgba(18,21,26,.16)}
+.strip div{flex:1;min-width:200px;padding:26px 28px;border-right:1px solid var(--hair);position:relative}
+.strip div:last-child{border-right:0}
+.strip .k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3)}
+.strip .v{font-size:15px;margin-top:8px;font-weight:600}
+.strip .v b{color:var(--gold)}
+section{padding:120px 0}
+/* thesis with image */
+.thz{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.thz h2{font-size:clamp(30px,4.4vw,50px);margin:18px 0 22px}
+.thz .neg{color:var(--ink3)}
+.thz p{color:var(--ink2);font-size:18px;max-width:620px}
+.thz .fig{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 90px rgba(18,21,26,.26)}
+.thz .fig img{width:100%;height:100%;object-fit:cover;transition:1.2s}
+.thz .fig:hover img{transform:scale(1.05)}
+.thz .fig .tag{position:absolute;left:16px;bottom:16px;background:rgba(12,15,18,.5);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:9px 15px;border-radius:20px}
+/* divisions */
+.dhead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+.divs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px}
+.dv{border:1px solid var(--line);border-radius:16px;padding:38px;background:#fff;transition:.3s;position:relative;overflow:hidden}
+.dv:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--goldg);transform:scaleY(0);transform-origin:top;transition:.35s}
+.dv:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(18,21,26,.13);border-color:transparent}
+.dv:hover:before{transform:scaleY(1)}
+.dvi{display:flex;align-items:center;gap:12px}
+.dv .dn{font-size:13px;color:var(--gold);letter-spacing:.14em;font-weight:800;font-variant-numeric:tabular-nums}
+.dv .dc{height:1px;flex:1;background:var(--hair)}
+.dv h3{font-size:25px;margin:16px 0 12px}
+.dv p{color:var(--ink2);font-size:14.5px;max-width:440px}
+.dv .sv{margin-top:20px;font-size:12.5px;color:var(--ink3);letter-spacing:.01em;line-height:2;border-top:1px solid var(--hair);padding-top:18px}
+.dv.gold{background:linear-gradient(155deg,rgba(231,206,138,.22),rgba(201,162,75,.06));border-color:rgba(201,162,75,.3);display:flex;flex-direction:column;justify-content:center}
+.dv.gold h3{font-size:23px}
+/* dark standard band */
+.stand{position:relative;background:var(--ob);color:#EDEFF1;overflow:hidden}
+.stand:before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 12% 0%,rgba(201,162,75,.16),transparent 55%),radial-gradient(60% 80% at 100% 100%,rgba(70,90,110,.18),transparent 60%)}
+.stand .in{position:relative}
+.stand .lab{color:var(--gold3)}
+.stand h2{color:#fff;font-size:clamp(28px,4vw,44px);margin-top:16px}
+.vals{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;border-top:1px solid var(--dline)}
+.vl{padding:32px 26px 4px 0;border-right:1px solid var(--dhair)}
+.vl:last-child{border-right:0;padding-right:0}
+.vl .vn{color:var(--gold3);font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.vl h4{color:#fff;font-size:19px;margin:16px 0 10px}
+.vl p{color:var(--steel);font-size:13px;line-height:1.66}
+/* structure */
+.struct{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.struct h2{font-size:clamp(28px,4vw,42px);margin:16px 0 22px}
+.struct p{color:var(--ink2);font-size:16px;line-height:1.72;max-width:460px}
+.struct .mk{margin-top:26px;display:flex;flex-wrap:wrap;gap:9px}
+.mk span{border:1px solid var(--line);color:var(--ink2);font-size:12px;padding:8px 15px;border-radius:20px}
+.mk span:hover{border-color:var(--gold);color:var(--gold)}
+.tree{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 26px 60px rgba(18,21,26,.1)}
+.tree .row{padding:20px 26px;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.tree .row:last-child{border:0}
+.tree .row.parent{background:linear-gradient(90deg,rgba(201,162,75,.14),rgba(201,162,75,.03))}
+.tree .nm{font-weight:700;font-size:15px}
+.tree .nm.child{padding-left:22px;font-weight:500;color:var(--ink2)}
+.tree .nm.child:before{content:"";display:inline-block;width:10px;height:1px;background:var(--gold2);margin-right:12px;vertical-align:middle}
+.tree .jr{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+/* positioning — dark image band */
+.quote{position:relative;padding:150px 0;text-align:center;overflow:hidden;color:#fff;background:#0C0F12}
+.quote .bg{position:absolute;inset:0}
+.quote .bg img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.15)}
+.quote .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,14,.78),rgba(10,12,14,.68) 45%,rgba(10,12,14,.85))}
+.quote .in{position:relative}
+.quote .lab{color:var(--gold3)}
+.quote h2{color:#fff;font-size:clamp(30px,4.8vw,56px);max-width:20ch;margin:22px auto 0;letter-spacing:-.025em}
+.quote h2 .go{background:var(--goldg);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.quote p{color:rgba(255,255,255,.72);max-width:640px;margin:26px auto 0;font-size:17px}
+/* footer */
+.foot{padding:76px 44px 50px;background:var(--ob2);color:#C4C9CD}
+.foot .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:34px;max-width:1200px;margin:0 auto}
+.foot .lgw{display:flex;align-items:center;gap:12px}
+.foot .lg{font-weight:800;letter-spacing:.15em;font-size:19px;color:#fff}
+.foot p{color:#828A91;font-size:13px;max-width:340px;margin-top:16px;line-height:1.7}
+.foot .cols{display:flex;gap:60px}
+.foot .cols div{font-size:13px;color:#C4C9CD}.foot .cols .h{color:var(--gold3);text-transform:uppercase;letter-spacing:.14em;font-size:11px;margin-bottom:15px}
+.foot .cols a{display:block;margin-bottom:10px}.foot .cols a:hover{color:#fff}
+.foot .bar{max-width:1200px;margin:48px auto 0;padding-top:24px;border-top:1px solid var(--dhair);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:11.5px;color:#828A91;letter-spacing:.03em}
+@media(max-width:880px){.hero .in{padding-top:80px}.thz,.struct{grid-template-columns:1fr}.divs{grid-template-columns:1fr}.vals{grid-template-columns:1fr 1fr;border-top:0}.vl{border-right:0;border-bottom:1px solid var(--dhair);padding-right:0}.nav .lk{display:none}}
+</style>
+<div class="nav"><div class="lgw"><div class="lg">ARVON GROUP</div></div><div class="lk"><a>The Group</a><a>Divisions</a><a>Approach</a><a>Structure</a><a>Contact</a></div><a class="en">Enquire</a></div>
+
+<div class="hero">
+<div class="bg"><img src="assets/arches.jpg" alt=""></div><div class="scrim"></div><div class="scrim2"></div>
+<div class="wrap in">
+<div class="eyb"><span class="gline"></span>Arvon Group Ltd · Est. 2025 · Split &amp; United Kingdom</div>
+<h1>The infrastructure of elite <span class="go">performance.</span></h1>
+<div class="sub">One institution connecting sport, tourism, events, consulting, and technology — engineered for professional clubs, national federations, and premium corporate clients across the Gulf, Europe, and beyond.</div>
+<div class="btns"><a class="btn g">Request an introduction →</a><a class="btn o">Explore the group</a></div>
+</div>
+<div class="scroll">Scroll ↓</div>
+</div>
+
+<div class="wrap stripwrap"><div class="strip">
+<div><div class="k">Founding entity</div><div class="v">Arvon d.o.o. · <b>Split, Croatia</b></div></div>
+<div><div class="k">Holding company</div><div class="v">Arvon Group Ltd · <b>United Kingdom</b></div></div>
+<div><div class="k">Primary market</div><div class="v">Gulf &amp; MENA sport</div></div>
+<div><div class="k">Divisions</div><div class="v">Sport · Tourism · Events · Consulting · AI</div></div>
+</div></div>
+
+<section class="thz-sec"><div class="wrap thz">
+<div>
+<div class="lab">The thesis</div>
+<h2><span class="neg">Not an agency. Not a travel company. Not a tech firm.</span> The institution that connects all three.</h2>
+<p>Elite clients require operational completeness that single-discipline firms cannot provide. A Gulf football club arriving for a training camp needs not only pitches and hotels, but full destination management, culturally precise coordination, and post-camp consulting continuity. Arvon delivers all of it — under one standard, one identity, one point of accountability.</p>
+</div>
+<div class="fig"><img src="assets/beam.jpg" alt=""><div class="tag">Elite sport · under one standard</div></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="dhead"><div><div class="lab">Divisions</div><h2 style="font-size:clamp(28px,4vw,44px);margin-top:14px">Five divisions. One standard.</h2></div><div class="labs" style="max-width:280px;text-align:right">Independently excellent — together, unmatched.</div></div>
+<div class="divs">
+<div class="dv"><div class="dvi"><div class="dn">01</div><span class="dc"></span></div><h3>Arvon Sports</h3><p>Complete sports operations infrastructure for professional clubs, federations, and athletes at the elite level.</p><div class="sv">Training-camp management · Club representation · Scouting &amp; recruitment · Transfer &amp; federation consulting</div></div>
+<div class="dv"><div class="dvi"><div class="dn">02</div><span class="dc"></span></div><h3>Arvon Tourism</h3><p>Premium sports tourism and destination management for international professional and corporate clients.</p><div class="sv">Sports-tourism packages · Destination management · Hotel partnerships · VIP transfer &amp; corporate travel</div></div>
+<div class="dv"><div class="dvi"><div class="dn">03</div><span class="dc"></span></div><h3>Arvon Events</h3><p>Design, production, and management of premium sport, business, and institutional events at international standard.</p><div class="sv">Tournaments · Conferences &amp; summits · Hospitality · Sponsorship &amp; end-to-end delivery</div></div>
+<div class="dv"><div class="dvi"><div class="dn">04</div><span class="dc"></span></div><h3>Arvon Consulting</h3><p>Strategic commercial and operational advisory for organisations entering new markets.</p><div class="sv">Market-entry strategy · Sports &amp; tourism commercial consulting · Business development · Partnership design</div></div>
+<div class="dv"><div class="dvi"><div class="dn">05</div><span class="dc"></span></div><h3>Arvon AI &amp; Technology</h3><p>Proprietary technology, automation, and intelligence tools that compound the group&rsquo;s operational advantage.</p><div class="sv">SaaS operations · CRM &amp; automation · Data &amp; intelligence · Client-facing platforms</div></div>
+<div class="dv gold"><div class="dvi"><div class="dn" style="color:var(--gold)">◆</div></div><h3>Under one point of accountability.</h3><p style="color:var(--ink2)">Each division stands on its own — together they deliver outcomes no single-discipline firm can match.</p></div>
+</div>
+</div></section>
+
+<section class="stand"><div class="wrap in">
+<div class="lab">The Arvon standard</div>
+<h2>Five things we never compromise.</h2>
+<div class="vals">
+<div class="vl"><div class="vn">01</div><h4>Precision</h4><p>Every detail is deliberate. Vagueness is a form of disrespect to elite clients.</p></div>
+<div class="vl"><div class="vn">02</div><h4>Discretion</h4><p>Confidentiality and trust are non-negotiable. Arvon does not disclose its clients.</p></div>
+<div class="vl"><div class="vn">03</div><h4>Excellence</h4><p>The standard is not industry average. It is what elite clients deserve.</p></div>
+<div class="vl"><div class="vn">04</div><h4>Respect</h4><p>Cultural intelligence — particularly across the Gulf and MENA — is operational, not decorative.</p></div>
+<div class="vl"><div class="vn">05</div><h4>Continuity</h4><p>Relationships are long-term. Every engagement is the foundation of the next.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap struct">
+<div>
+<div class="lab">Corporate structure</div>
+<h2>An international holding group.</h2>
+<p>Arvon Group Ltd is the United Kingdom parent holding company — owning the group&rsquo;s equity, intellectual property, and brand. Operations run through dedicated subsidiaries, each with its own accounting, compliance, and banking, governed by intercompany agreements.</p>
+<div class="mk"><span>Gulf &amp; MENA</span><span>Balkans</span><span>North Africa</span><span>Eastern Europe</span><span>South America</span></div>
+</div>
+<div class="tree">
+<div class="row parent"><div class="nm">Arvon Group Ltd</div><div class="jr">United Kingdom · Parent</div></div>
+<div class="row"><div class="nm child">Arvon d.o.o.</div><div class="jr">Croatia · Sport · Tourism · Events</div></div>
+<div class="row"><div class="nm child">Arvon Consulting</div><div class="jr">EU · Advisory</div></div>
+<div class="row"><div class="nm child">Arvon AI Ltd</div><div class="jr">Estonia / Ireland · Technology</div></div>
+<div class="row"><div class="nm child">Future subsidiaries</div><div class="jr">Per expansion roadmap</div></div>
+</div>
+</div></section>
+
+<div class="quote"><div class="bg"><img src="assets/glass-figures.jpg" alt=""></div><div class="wrap in">
+<div class="lab">Positioning</div>
+<h2>Arvon does not compete on price. It competes on <span class="go">certainty.</span></h2>
+<p>For a technical director preparing a winter camp, a federation planning a regional tournament, or a CEO entering a new market — Arvon delivers outcomes, not proposals.</p>
+<div class="btns" style="justify-content:center;margin-top:38px"><a class="btn g">Request an introduction →</a></div>
+</div></div>
+
+<div class="foot"><div class="top">
+<div><div class="lgw"><div class="lg">ARVON GROUP</div></div><p>The institutional bridge between sport, premium tourism, and business intelligence.</p></div>
+<div class="cols">
+<div><div class="h">Group</div><a>Divisions</a><a>Approach</a><a>Structure</a></div>
+<div><div class="h">Company</div><a>About</a><a>Careers</a><a>Contact</a></div>
+<div><div class="h">Offices</div><a>Split, Croatia</a><a>United Kingdom</a></div>
+</div>
+</div>
+<div class="bar"><span>© 2026 Arvon Group Ltd. All rights reserved.</span><span>Precision · Discretion · Excellence · Respect · Continuity</span></div>
+</div>
